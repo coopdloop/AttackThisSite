@@ -1,6 +1,7 @@
 Test
 
 
-This will be a basic test site that will allow XSS scripting.
+This will be a basic test site that will store data inputted into username and password.
+This site will be a clone of www.facebook.com
 
-Bonus, Allow SQL injection.
+Bonus, Allow SQL injection, xss scripting
