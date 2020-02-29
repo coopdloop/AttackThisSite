@@ -11,20 +11,36 @@ def home():
         f = request.args.get('fname')
         l = request.args.get('lname')
         sqlsend(f,l)
-        print(f + " " + l)
+        #print(f + " " + l)
     return render_template('home.html')
     
 def sqlsend(first,last):
     mydb = mysql.connector.connect(
-        host="dev1.wallace",
+        host="127.0.0.1",
         user="coop",
-        passwd="secret"
+        passwd="secret",
+        database="db"
+        #buffered=True
     )
     mycursor = mydb.cursor()
-    mycursor.execute("INSERT INTO names (first, last) VALUES ({},{})".format(first,last))
-    mycursor.commit()
-    
 
+    # Safe from SQli
+    #query = "INSERT INTO names(first, last) VALUES (%s, %s)"
+    #mycursor.execute(query, (first, last))
+
+
+    # Example of unsafe query
+    unsafequery = "select * from names where id = USERINPUT"
+    unsafequery = unsafequery.replace("USERINPUT", "1 or 1=1")
+
+    print("Query : {}".format(unsafequery))
+    mycursor.execute(unsafequery)
+    out = mycursor.fetchall()
+
+    print(out)
+
+    mydb.commit()
+    mycursor.close()
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0' ,port=1337)
