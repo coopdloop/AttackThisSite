@@ -16,7 +16,7 @@ def home():
     
 def sqlsend(first,last):
     mydb = mysql.connector.connect(
-        host="127.0.0.1",
+        host="192.168.56.56",
         user="coop",
         passwd="secret",
         database="db"
