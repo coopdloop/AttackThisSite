@@ -1,0 +1,32 @@
+List of things you'll need to run the server:
+
+Flask
+Docker
+Mysql connector
+python
+Ubuntu box
+git
+----------------------------------------------------------------
+sudo apt-get update -y
+
+
+
+get git:
+sudo apt install git
+
+
+get python:
+sudo apt install python-pip
+
+
+get mysql-connector
+pip install mysql-connector-python
+
+
+get python flask:
+pip install flask
+
+
+get docker:
+https://docs.docker.com/install/linux/docker-ce/ubuntu/
+sudo snap install docker
