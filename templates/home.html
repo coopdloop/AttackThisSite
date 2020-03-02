@@ -11,9 +11,17 @@
   <label for="lname">Last name:</label><br>
   <input type="text" id="lname" name="lname" value="Doe"><br><br>
   <input type="submit" value="Submit">
+  <p>If you click the "Submit" button, the form-data will be sent as GET request to msql db".</p>
+  <br><br>
+</form>
+<form action="/home">
+  <label for="searchreq">Type an ID:</label><br>
+  <input type="text" id="searchreq" name="searchreq" value=""><br><br>
+  <textarea name="message" rows="10" cols="50">{{out}}</textarea>
+  <br><br>
+  <input type="submit" value="Search">
 </form> 
 
-<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
 
 </body>
 </html>
